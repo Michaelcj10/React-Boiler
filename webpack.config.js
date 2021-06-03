@@ -1,4 +1,5 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   mode: "production",
@@ -26,6 +27,12 @@ module.exports = {
       template: "./index.html",
       filename: "./index.html",
       favicon: "./favicon.png",
+    }),
+    new CopyPlugin({
+      patterns: [{ from: "public", to: "public" }],
+      options: {
+        concurrency: 100,
+      },
     }),
   ],
 
