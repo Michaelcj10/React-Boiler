@@ -29,7 +29,7 @@ module.exports = {
       favicon: "./favicon.png",
     }),
     new CopyPlugin({
-      patterns: [{ from: "public", to: "public" }],
+      patterns: [{ from: "public/locales", to: "locales" }],
       options: {
         concurrency: 100,
       },
